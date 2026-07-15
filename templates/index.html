@@ -84,6 +84,8 @@
 
     <section class="order-section" id="order">
 
+        <div class="order-container">
+
         <div class="order-card">
 
             <h2>Place Your Order</h2>
@@ -169,9 +171,34 @@
 
             </form>
 
-        </div>
+            </div>
 
-    </section>
+            <div class="preview-card">
+
+            <h2>Food Preview</h2>
+
+            <img
+            id="foodPreview"
+            src="{{ url_for('static', filename='images/default-food.png') }}"
+            alt="Food Preview">
+
+            <div class="food-info">
+
+            <p>⭐ Rating : <strong>4.9/5</strong></p>
+
+            <p>🚚 Delivery : <strong>30-40 mins</strong></p>
+
+            <p>🔥 Freshly Prepared</p>
+
+            <p>💳 Cash & Online Payment</p>
+
+            </div>
+
+            </div>
+
+            </div>
+
+            </section>
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 

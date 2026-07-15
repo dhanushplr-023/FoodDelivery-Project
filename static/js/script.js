@@ -1,22 +1,47 @@
-// Get elements
-const foodSelect = document.getElementById("food_item");
-const otherFoodDiv = document.getElementById("otherFoodDiv");
+const foodSelect=document.getElementById("food_item");
 
-// Run only if the elements exist
-if (foodSelect && otherFoodDiv) {
+const otherFoodDiv=document.getElementById("otherFoodDiv");
 
-    foodSelect.addEventListener("change", function () {
+const preview=document.getElementById("foodPreview");
 
-        if (this.value === "Other") {
+const images={
 
-            otherFoodDiv.style.display = "block";
+"Margherita Pizza":"pizza.png",
 
-        } else {
+"Farmhouse Pizza":"pizza.png",
 
-            otherFoodDiv.style.display = "none";
+"Pepperoni Pizza":"pizza.png",
 
-        }
+"Veg Burger":"burger.png",
 
-    });
+"Chicken Burger":"burger.png",
+
+"French Fries":"fries.png",
+
+"White Sauce Pasta":"pasta.png",
+
+"Hakka Noodles":"noodles.png",
+
+"Mexican Wrap":"wrap.png",
+
+"Cold Coffee":"coffee.png",
+
+"Other":"default-food.png"
+
+};
+
+foodSelect.addEventListener("change",function(){
+
+if(this.value==="Other"){
+
+otherFoodDiv.style.display="block";
+
+}else{
+
+otherFoodDiv.style.display="none";
 
 }
+
+preview.src="/static/images/"+images[this.value];
+
+});
