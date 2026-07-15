@@ -256,76 +256,121 @@ header{
 =========================== */
 
 .order-section{
-    background:#fff8f5;
+    background:#f8f8f8;
     padding:80px 20px;
-    display:flex;
-    justify-content:center;
 }
 
 .order-card{
+
     width:100%;
     max-width:700px;
+
+    margin:auto;
+
     background:#ffffff;
-    border-radius:20px;
-    padding:40px;
-    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+
+    padding:45px;
+
+    border-radius:24px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+
 }
 
 .order-card h2{
+
     text-align:center;
+
     color:#ff6b35;
-    margin-bottom:30px;
-    font-size:32px;
+
+    margin-bottom:35px;
+
+    font-size:34px;
+
 }
 
 .order-card form{
+
     display:flex;
+
     flex-direction:column;
-    gap:18px;
+
 }
 
 .order-card label{
+
+    margin-top:18px;
+
+    margin-bottom:8px;
+
     font-weight:600;
-    color:#444;
+
 }
 
 .order-card input,
-.order-card select,
-.order-card textarea{
+.order-card textarea,
+.order-card select{
+
     width:100%;
-    padding:14px;
+
+    padding:15px;
+
+    border-radius:12px;
+
     border:1px solid #ddd;
-    border-radius:10px;
+
     font-size:16px;
-    outline:none;
-    transition:0.3s;
+
+    transition:.3s;
+
+}
+
+.order-card textarea{
+
+    resize:none;
+
 }
 
 .order-card input:focus,
-.order-card select:focus,
-.order-card textarea:focus{
-    border-color:#ff6b35;
-    box-shadow:0 0 10px rgba(255,107,53,.25);
-}
+.order-card textarea:focus,
+.order-card select:focus{
 
-.order-card textarea{
-    resize:none;
+    outline:none;
+
+    border-color:#ff6b35;
+
+    box-shadow:0 0 10px rgba(255,107,53,.25);
+
 }
 
 .order-card button{
-    margin-top:10px;
+
+    margin-top:30px;
+
     padding:16px;
-    border:none;
-    border-radius:12px;
+
     background:#ff6b35;
-    color:#fff;
+
+    color:white;
+
+    border:none;
+
+    border-radius:14px;
+
     font-size:18px;
+
     font-weight:600;
+
     cursor:pointer;
+
     transition:.3s;
+
 }
 
 .order-card button:hover{
+
     background:#ff824d;
-    transform:translateY(-2px);
+
+    transform:translateY(-3px);
+
 }
