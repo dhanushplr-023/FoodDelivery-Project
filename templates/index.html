@@ -46,43 +46,292 @@
 
     <!-- ================= HERO ================= -->
 
-    <section class="hero">
+     <!-- ================= HERO ================= -->
 
-        <div class="hero-left">
+<section class="hero">
 
-            <h1>
+    <div class="hero-left">
 
-                Fresh Food <br>
+        <span class="hero-tag">
+            🍔 #1 Food Delivery Service
+        </span>
 
-                Delivered Fast
+        <h1>
+            Delicious Food
+            <br>
+            Delivered To
+            <span>Your Doorstep</span>
+        </h1>
 
-            </h1>
+        <p>
+            Freshly prepared meals, lightning-fast delivery, and unbeatable taste.
+            Choose from pizzas, burgers, fries, pasta, noodles, wraps and more.
+        </p>
 
-            <p>
+        <div class="hero-buttons">
 
-                Enjoy delicious meals prepared by expert chefs and delivered straight to your doorstep.
+            <a href="#menu" class="hero-btn">
+                Explore Menu
+            </a>
 
-            </p>
-
-            <a href="#order" class="hero-btn">
-
-                🍽 Order Food
-
+            <a href="#order" class="hero-btn secondary-btn">
+                Order Now
             </a>
 
         </div>
 
-        <div class="hero-right">
+        <div class="hero-stats">
 
-            <img src="{{ url_for('static', filename='images/pizza.png') }}" alt="Pizza">
+            <div class="stat-box">
+
+                <h2>1000+</h2>
+
+                <p>Happy Customers</p>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h2>50+</h2>
+
+                <p>Food Items</p>
+
+            </div>
+
+            <div class="stat-box">
+
+                <h2>30 min</h2>
+
+                <p>Fast Delivery</p>
+
+            </div>
 
         </div>
 
-    </section>
+    </div>
 
-    <!-- ================= ORDER ================= -->
+    <div class="hero-right">
 
-    <section class="order-section" id="order">
+        <img
+        src="{{ url_for('static', filename='images/pizza.png') }}"
+        alt="Pizza">
+
+        <div class="floating-card rating-card">
+
+            ⭐ 4.9
+            <br>
+            Customer Rating
+
+        </div>
+
+        <div class="floating-card delivery-card">
+
+            🚚
+            <br>
+            Delivery
+            <br>
+            30-40 mins
+
+        </div>
+
+        <div class="floating-card offer-card">
+
+            🔥
+            <br>
+            Flat 20% OFF
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= POPULAR MENU ================= -->
+
+<section class="menu-section" id="menu">
+
+    <h2>Popular Dishes</h2>
+
+    <p>Choose your favourite meals prepared by our chefs.</p>
+
+    <div class="menu-grid">
+
+        <div class="menu-card">
+
+            <img src="{{ url_for('static', filename='images/pizza.png') }}">
+
+            <h3>Margherita Pizza</h3>
+
+            <p class="price">₹299</p>
+
+            <span>⭐ 4.9</span>
+
+            <button class="menu-btn"
+            onclick="selectFood('Margherita Pizza')">
+
+                Order Now
+
+            </button>
+
+        </div>
+
+        <div class="menu-card">
+
+            <img src="{{ url_for('static', filename='images/burger.png') }}">
+
+            <h3>Chicken Burger</h3>
+
+            <p class="price">₹199</p>
+
+            <span>⭐ 4.8</span>
+
+            <button class="menu-btn"
+            onclick="selectFood('Chicken Burger')">
+
+                Order Now
+
+            </button>
+
+        </div>
+
+        <div class="menu-card">
+
+            <img src="{{ url_for('static', filename='images/fries.png') }}">
+
+            <h3>French Fries</h3>
+
+            <p class="price">₹149</p>
+
+            <span>⭐ 4.7</span>
+
+            <button class="menu-btn"
+            onclick="selectFood('French Fries')">
+
+                Order Now
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section class="features-section">
+
+    <h2>Why Choose Foodie Express?</h2>
+
+    <p>Fresh food, fast delivery and excellent customer service.</p>
+
+    <div class="features-grid">
+
+        <div class="feature-card">
+
+            <div class="feature-icon">🚚</div>
+
+            <h3>Fast Delivery</h3>
+
+            <p>Average delivery time of just 30–40 minutes.</p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon">👨‍🍳</div>
+
+            <h3>Fresh Food</h3>
+
+            <p>Prepared fresh by experienced chefs every day.</p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon">💳</div>
+
+            <h3>Secure Payment</h3>
+
+            <p>Pay using UPI, Cards or Cash on Delivery.</p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon">⭐</div>
+
+            <h3>Top Rated</h3>
+
+            <p>Rated 4.9/5 by thousands of happy customers.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+
+<section class="testimonial-section">
+
+    <h2>What Our Customers Say</h2>
+
+    <p>Thousands of happy customers trust Foodie Express every day.</p>
+
+    <div class="testimonial-grid">
+
+        <div class="testimonial-card">
+
+            <img src="{{ url_for('static', filename='images/customer1.jpg') }}" alt="Customer">
+
+            <h3>Rahul Kumar</h3>
+
+            <span>⭐⭐⭐⭐⭐</span>
+
+            <p>
+                Amazing taste and very fast delivery.
+                The pizza arrived hot and fresh.
+            </p>
+
+        </div>
+
+        <div class="testimonial-card">
+
+            <img src="{{ url_for('static', filename='images/customer2.jpg') }}" alt="Customer">
+
+            <h3>Priya Sharma</h3>
+
+            <span>⭐⭐⭐⭐⭐</span>
+
+            <p>
+                Best online food ordering experience.
+                Highly recommended.
+            </p>
+
+        </div>
+
+        <div class="testimonial-card">
+
+            <img src="{{ url_for('static', filename='images/customer3.jpg') }}" alt="Customer">
+
+            <h3>Arjun Patel</h3>
+
+            <span>⭐⭐⭐⭐⭐</span>
+
+            <p>
+                Delicious burgers and excellent customer service.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= ORDER ================= -->
+
+<section class="order-section" id="order">
 
         <div class="order-container">
 

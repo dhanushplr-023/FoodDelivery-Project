@@ -1,47 +1,91 @@
-const foodSelect=document.getElementById("food_item");
+// ================================
+// DOM Elements
+// ================================
 
-const otherFoodDiv=document.getElementById("otherFoodDiv");
+const foodSelect = document.getElementById("food_item");
+const otherFoodDiv = document.getElementById("otherFoodDiv");
+const preview = document.getElementById("foodPreview");
 
-const preview=document.getElementById("foodPreview");
+// ================================
+// Food Images
+// ================================
 
-const images={
+const foodImages = {
 
-"Margherita Pizza":"pizza.png",
+    "Margherita Pizza": "pizza.png",
 
-"Farmhouse Pizza":"pizza.png",
+    "Farmhouse Pizza": "pizza.png",
 
-"Pepperoni Pizza":"pizza.png",
+    "Pepperoni Pizza": "pizza.png",
 
-"Veg Burger":"burger.png",
+    "Veg Burger": "burger.png",
 
-"Chicken Burger":"burger.png",
+    "Chicken Burger": "burger.png",
 
-"French Fries":"fries.png",
+    "French Fries": "fries.png",
 
-"White Sauce Pasta":"pasta.png",
+    "White Sauce Pasta": "pasta.png",
 
-"Hakka Noodles":"noodles.png",
+    "Hakka Noodles": "noodles.png",
 
-"Mexican Wrap":"wrap.png",
+    "Mexican Wrap": "wrap.png",
 
-"Cold Coffee":"coffee.png",
+    "Cold Coffee": "coffee.png",
 
-"Other":"default-food.png"
+    "Other": "default-food.png"
 
 };
 
-foodSelect.addEventListener("change",function(){
+// ================================
+// Dropdown Change
+// ================================
 
-if(this.value==="Other"){
+if (foodSelect) {
 
-otherFoodDiv.style.display="block";
-
-}else{
-
-otherFoodDiv.style.display="none";
+    foodSelect.addEventListener("change", updateFoodPreview);
 
 }
 
-preview.src="/static/images/"+images[this.value];
+// ================================
+// Update Preview
+// ================================
 
-});
+function updateFoodPreview() {
+
+    const selectedFood = foodSelect.value;
+
+    if (selectedFood === "Other") {
+
+        otherFoodDiv.style.display = "block";
+
+    } else {
+
+        otherFoodDiv.style.display = "none";
+
+    }
+
+    if (preview) {
+
+        preview.src = "/static/images/" + foodImages[selectedFood];
+
+    }
+
+}
+
+// ================================
+// Menu Card Button
+// ================================
+
+function selectFood(foodName) {
+
+    foodSelect.value = foodName;
+
+    updateFoodPreview();
+
+    document.getElementById("order").scrollIntoView({
+
+        behavior: "smooth"
+
+    });
+
+}
