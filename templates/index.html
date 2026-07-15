@@ -1,64 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Food Delivery</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Foodie Express</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 
 <body>
 
-    <div class="container">
+    <!-- ================= HEADER ================= -->
 
-        <h1>🍔 Online Food Delivery</h1>
+    <header>
 
-        <p>Place your food order below.</p>
+        <nav class="navbar">
 
-        <form action="/order" method="POST">
+            <div class="logo">
 
-            <label>Customer Name</label>
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
 
-            <input
-                type="text"
-                name="customer_name"
-                placeholder="Enter your name"
-                required>
+                <h2>Foodie Express</h2>
 
-            <label>Customer Email</label>
+            </div>
 
-            <input
-                type="email"
-                name="customer_email"
-                placeholder="Enter your email"
-                required>
+            <ul>
 
-             <label>Food Item</label>
+                <li><a href="#">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="#contact">Contact</a></li>
 
-            <input
-                type="text"
-                name="food_item"
-                placeholder="Example: Pizza"
-                required>
+            </ul>
 
-            <label>Quantity</label>
+            <a href="#order" class="nav-btn">Order Now</a>
 
-            <input
-                type="number"
-                name="quantity"
-                min="1"
-                value="1"
-                required>
-             
+        </nav>
 
-            <button type="submit">
-                Place Order
-            </button>
+    </header>
 
-        </form>
+    <!-- ================= HERO ================= -->
 
-    </div>
+    <section class="hero">
+
+        <div class="hero-left">
+
+            <h1>
+
+                Fresh Food <br>
+
+                Delivered Fast
+
+            </h1>
+
+            <p>
+
+                Enjoy delicious meals prepared by expert chefs and delivered straight to your doorstep.
+
+            </p>
+
+            <a href="#order" class="hero-btn">
+
+                🍽 Order Food
+
+            </a>
+
+        </div>
+
+        <div class="hero-right">
+
+            <img src="{{ url_for('static', filename='images/pizza.png') }}" alt="Pizza">
+
+        </div>
+
+    </section>
+
+    <!-- ================= ORDER ================= -->
+
+    <section class="order-section" id="order">
+
+        <div class="order-card">
+
+            <h2>Place Your Order</h2>
+
+            <form action="/order" method="POST">
+
+                <label>Customer Name</label>
+
+                <input
+                    type="text"
+                    name="customer_name"
+                    placeholder="Enter your name"
+                    required>
+
+                <label>Phone Number</label>
+
+                <input
+                    type="tel"
+                    name="phone_number"
+                    placeholder="9876543210"
+                    required>
+
+                <label>Delivery Address</label>
+
+                <textarea
+                    name="delivery_address"
+                    rows="3"
+                    placeholder="Enter complete address"
+                    required></textarea>
+
+                <label>Food Item</label>
+
+                <select name="food_item" id="food_item">
+
+                    <option>Margherita Pizza</option>
+                    <option>Farmhouse Pizza</option>
+                    <option>Pepperoni Pizza</option>
+                    <option>Veg Burger</option>
+                    <option>Chicken Burger</option>
+                    <option>French Fries</option>
+                    <option>White Sauce Pasta</option>
+                    <option>Hakka Noodles</option>
+                    <option>Mexican Wrap</option>
+                    <option>Cold Coffee</option>
+                    <option>Other</option>
+
+                </select>
+
+                <div id="otherFoodDiv" style="display:none;">
+
+                    <label>Other Food Item</label>
+
+                    <input
+                        type="text"
+                        name="other_food"
+                        id="other_food"
+                        placeholder="Enter food item">
+
+                </div>
+
+                <label>Quantity</label>
+
+                <input
+                    type="number"
+                    name="quantity"
+                    value="1"
+                    min="1"
+                    max="10"
+                    required>
+
+                <label>Special Instructions</label>
+
+                <textarea
+                    name="special_instructions"
+                    rows="3"
+                    placeholder="Optional"></textarea>
+
+                <button type="submit">
+
+                    Place Order
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 </body>
+
 </html>

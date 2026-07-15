@@ -1,0 +1,331 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#fff8f5;
+    color:#333;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+header{
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1000;
+}
+
+.navbar{
+
+    width:90%;
+    max-width:1300px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 0;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.logo img{
+
+    width:70px;
+
+    height:70px;
+
+    object-fit:contain;
+
+}
+
+.logo h2{
+
+    color:white;
+
+    font-size:28px;
+
+}
+
+.navbar ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+.navbar ul li a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.navbar ul li a:hover{
+
+    color:#ff6b35;
+
+}
+
+.nav-btn{
+
+    text-decoration:none;
+
+    background:#ff6b35;
+
+    color:white;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.nav-btn:hover{
+
+    background:#ff824d;
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+
+    width:100%;
+
+    min-height:100vh;
+
+    background:
+
+    linear-gradient(rgba(0,0,0,.55),
+
+    rgba(0,0,0,.55)),
+
+    url("../images/hero.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:120px 8% 60px;
+
+}
+
+.hero-left{
+
+    width:50%;
+
+}
+
+.hero-left h1{
+
+    color:white;
+
+    font-size:65px;
+
+    line-height:1.2;
+
+    margin-bottom:25px;
+
+}
+
+.hero-left p{
+
+    color:#f2f2f2;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+.hero-btn{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    background:#ff6b35;
+
+    color:white;
+
+    padding:16px 35px;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.hero-btn:hover{
+
+    transform:translateY(-4px);
+
+    background:#ff824d;
+
+}
+
+/* ===========================
+   HERO IMAGE
+=========================== */
+
+.hero-right{
+
+    width:45%;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.hero-right img{
+
+    width:520px;
+
+    max-width:100%;
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-20px);}
+    100%{transform:translateY(0);}
+}
+
+/* ===========================
+   ORDER SECTION
+=========================== */
+
+.order-section{
+    background:#fff8f5;
+    padding:80px 20px;
+    display:flex;
+    justify-content:center;
+}
+
+.order-card{
+    width:100%;
+    max-width:700px;
+    background:#ffffff;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+.order-card h2{
+    text-align:center;
+    color:#ff6b35;
+    margin-bottom:30px;
+    font-size:32px;
+}
+
+.order-card form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.order-card label{
+    font-weight:600;
+    color:#444;
+}
+
+.order-card input,
+.order-card select,
+.order-card textarea{
+    width:100%;
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
+    transition:0.3s;
+}
+
+.order-card input:focus,
+.order-card select:focus,
+.order-card textarea:focus{
+    border-color:#ff6b35;
+    box-shadow:0 0 10px rgba(255,107,53,.25);
+}
+
+.order-card textarea{
+    resize:none;
+}
+
+.order-card button{
+    margin-top:10px;
+    padding:16px;
+    border:none;
+    border-radius:12px;
+    background:#ff6b35;
+    color:#fff;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.order-card button:hover{
+    background:#ff824d;
+    transform:translateY(-2px);
+}
