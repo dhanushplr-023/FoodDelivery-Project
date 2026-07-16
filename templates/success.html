@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order Successful</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<section class="success-section">
+
+    <div class="success-card">
+
+        <div class="success-icon">✅</div>
+
+        <h1>Order Placed Successfully!</h1>
+
+        <p>Thank you for choosing <strong>Foodie Express</strong>.</p>
+
+        <hr>
+
+        <p><strong>Order ID:</strong> {{ order.order_id }}</p>
+
+        <p><strong>Customer:</strong> {{ order.customer_name }}</p>
+
+        <p><strong>Phone:</strong> {{ order.phone_number }}</p>
+
+        <p><strong>Food Item:</strong> {{ order.food_item }}</p>
+
+        <p><strong>Quantity:</strong> {{ order.quantity }}</p>
+
+        <p><strong>Status:</strong> {{ order.status }}</p>
+
+        <br>
+
+        <a href="/" class="hero-btn">🏠 Back to Home</a>
+
+    </div>
+
+</section>
+
+</body>
+
+</html>

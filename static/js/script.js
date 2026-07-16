@@ -89,3 +89,55 @@ function selectFood(foodName) {
     });
 
 }
+
+// =========================
+// Quantity Controls
+// =========================
+
+function increaseQty(){
+
+    const qty=document.getElementById("quantity");
+
+    if(parseInt(qty.value)<10){
+
+        qty.value++;
+
+    }
+
+}
+
+function decreaseQty(){
+
+    const qty=document.getElementById("quantity");
+
+    if(parseInt(qty.value)>1){
+
+        qty.value--;
+
+    }
+
+}
+
+// ==============================
+// Loading Animation
+// ==============================
+
+const orderForm = document.querySelector("form");
+
+if(orderForm){
+
+orderForm.addEventListener("submit",function(){
+
+const btn=document.getElementById("orderBtn");
+
+const spinner=document.getElementById("loadingSpinner");
+
+btn.disabled=true;
+
+btn.innerHTML="Processing Order...";
+
+spinner.style.display="block";
+
+});
+
+}

@@ -315,7 +315,7 @@
 
             <img src="{{ url_for('static', filename='images/customer3.jpg') }}" alt="Customer">
 
-            <h3>Arjun Patel</h3>
+            <h3>Lilly priya</h3>
 
             <span>⭐⭐⭐⭐⭐</span>
 
@@ -397,13 +397,36 @@
 
                 <label>Quantity</label>
 
-                <input
-                    type="number"
-                    name="quantity"
-                    value="1"
-                    min="1"
-                    max="10"
-                    required>
+                <div class="quantity-box">
+
+                    <button
+                        type="button"
+                        class="qty-btn"
+                        onclick="decreaseQty()">
+
+                        −
+
+                    </button>
+
+                    <input
+                        type="number"
+                        id="quantity"
+                        name="quantity"
+                        value="1"
+                        min="1"
+                        max="10"
+                        readonly>
+
+                    <button
+                        type="button"
+                        class="qty-btn"
+                        onclick="increaseQty()">
+
+                        +
+
+                    </button>
+
+                </div>
 
                 <label>Special Instructions</label>
 
@@ -412,11 +435,19 @@
                     rows="3"
                     placeholder="Optional"></textarea>
 
-                <button type="submit">
+                <button
+                    type="submit"
+                    id="orderBtn">
 
                     Place Order
 
                 </button>
+
+                <div
+                    id="loadingSpinner"
+                    class="loading-spinner">
+
+                </div>
 
             </form>
 
@@ -448,6 +479,67 @@
             </div>
 
             </section>
+
+            <!-- ================= FOOTER ================= -->
+
+<footer class="footer" id="contact">
+
+    <div class="footer-container">
+
+        <div class="footer-box">
+
+            <h2>🍔 Foodie Express</h2>
+
+            <p>
+                Delicious food delivered to your doorstep with
+                speed, quality and care.
+            </p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Quick Links</h3>
+
+            <a href="#">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#order">Order</a>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Contact</h3>
+
+            <p>📍 Chennai, India</p>
+
+            <p>📞 +91 9876543210</p>
+
+            <p>✉ support@foodieexpress.com</p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Follow Us</h3>
+
+            <p>📘 Facebook</p>
+
+            <p>📷 Instagram</p>
+
+            <p>🐦 Twitter</p>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © 2026 Foodie Express | AWS Cloud Project
+
+    </div>
+
+</footer>
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 

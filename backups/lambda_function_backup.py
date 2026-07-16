@@ -60,10 +60,27 @@ def order():
         MessageBody=json.dumps(order_data)
     )
 
-    return render_template(
-    "success.html",
-    order=order_data
-)
+    return f"""
+    <h2>✅ Order Placed Successfully!</h2>
+
+    <hr>
+
+    <p><b>Order ID:</b> {order_data['order_id']}</p>
+
+    <p><b>Customer:</b> {customer_name}</p>
+
+    <p><b>Phone:</b> {phone_number}</p>
+
+    <p><b>Food:</b> {food_item}</p>
+
+    <p><b>Quantity:</b> {quantity}</p>
+
+    <p><b>Status:</b> Pending</p>
+
+    <br>
+
+    <a href="/">⬅ Place Another Order</a>
+    """
 
 
 if __name__ == "__main__":
