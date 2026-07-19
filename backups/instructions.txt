@@ -1,0 +1,221 @@
+Online Food Delivery Backend - Execution Steps
+________________________________________
+1. Connect to EC2
+ssh -i food-delivery-key.pem ec2-user@<EC2-PUBLIC-IP>
+________________________________________
+2. Go to Project Folder
+cd ~/food-delivery-app
+________________________________________
+3. Create Virtual Environment (First Time Only)
+python3 -m venv venv
+________________________________________
+4. Activate Virtual Environment
+source venv/bin/activate
+________________________________________
+5. Install Dependencies
+pip install -r requirements.txt
+If no requirements file:
+pip install flask boto3
+________________________________________
+6. Verify Files
+ls
+Expected
+app.py
+templates/
+static/
+venv/
+requirements.txt
+________________________________________
+7. Run Flask Application
+python3 app.py
+Expected
+Running on http://0.0.0.0:5000
+________________________________________
+8. Open Website
+http://<EC2-PUBLIC-IP>:5000
+________________________________________
+9. Place an Order
+Fill
+•	Customer Name 
+•	Phone Number 
+•	Delivery Address 
+•	Food Item 
+•	Quantity 
+•	Special Instructions 
+Click
+Place Order
+________________________________________
+10. Check Success Page
+Should display
+Order ID
+
+Customer Name
+
+Phone Number
+
+Food Item
+
+Quantity
+
+Status
+________________________________________
+11. Verify SQS
+AWS Console
+Amazon SQS
+
+↓
+
+food-orders-queue
+
+↓
+
+Send and Receive Messages
+If Lambda is working, the queue should quickly become empty after processing.
+________________________________________
+12. Verify Lambda
+AWS Console
+Lambda
+
+↓
+
+food-order-lambda
+
+↓
+
+Monitor
+
+↓
+
+CloudWatch Logs
+Expected
+New Order Received
+
+Order Saved to DynamoDB
+
+SNS Notification Sent
+
+Lambda Execution Completed
+________________________________________
+13. Verify DynamoDB
+AWS Console
+DynamoDB
+
+↓
+
+food-orders
+
+↓
+
+Explore Table Items
+Expected fields
+order_id
+
+customer_name
+
+phone_number
+
+delivery_address
+
+food_item
+
+quantity
+
+special_instructions
+
+status
+
+order_time
+________________________________________
+14. Verify SNS
+Check your email.
+Expected
+Food Order Confirmation
+
+Customer Details
+
+Food Item
+
+Quantity
+
+Order Time
+
+Status
+________________________________________
+15. Stop Flask Server
+Press
+CTRL + C
+________________________________________
+Useful Linux Commands
+Go to project
+cd ~/food-delivery-app
+Activate venv
+source venv/bin/activate
+Deactivate venv
+deactivate
+List files
+ls
+Current folder
+pwd
+Edit file
+nano app.py
+or
+nano templates/index.html
+Restart Flask
+python3 app.py
+________________________________________
+If Code Changes
+Restart Flask
+CTRL + C
+
+python3 app.py
+________________________________________
+AWS Services Execution Order
+Customer
+
+↓
+
+Flask (EC2)
+
+↓
+
+Amazon SQS
+
+↓
+
+AWS Lambda
+
+↓
+
+Amazon DynamoDB
+
+↓
+
+Amazon SNS
+
+↓
+
+Customer receives Email
+________________________________________
+Final Execution Checklist
+✅ Connect EC2
+
+✅ Activate Virtual Environment
+
+✅ Install Packages
+
+✅ Run Flask
+
+✅ Open Website
+
+✅ Place Order
+
+✅ Success Page
+
+✅ Lambda Triggered
+
+✅ DynamoDB Updated
+
+✅ SNS Email Received
+
+✅ CloudWatch Logs Generated
+
